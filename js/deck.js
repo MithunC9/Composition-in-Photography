@@ -174,6 +174,13 @@
     var thumb = new Image();
     thumb.onload = function () { poster.style.backgroundImage = 'url(' + thumb.src + ')'; };
     thumb.src = 'https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg';
+    if (window.CIP_NO_EMBED) {
+      // Where embedded players are not allowed, the poster opens YouTube instead.
+      var link = h('a', { class: 'video-poster', href: v.url, target: '_blank', rel: 'noopener', 'aria-label': 'Watch on YouTube: ' + v.title }, poster.innerHTML);
+      poster.replaceWith(link);
+      thumb.onload = function () { link.style.backgroundImage = 'url(' + thumb.src + ')'; };
+      return;
+    }
     poster.addEventListener('click', function () {
       var box = s.inner.querySelector('#video-box');
       var f = h('iframe', {

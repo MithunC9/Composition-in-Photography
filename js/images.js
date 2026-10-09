@@ -146,7 +146,8 @@
     wrap.classList.add('is-missing');
     var box = document.createElement('span');
     box.className = 'missing';
-    box.innerHTML = '<i></i><span class="mono"></span><span class="mono">Image loads from Wikipedia when online</span>';
+    box.innerHTML = '<i></i><span class="mono"></span><span class="mono"></span>';
+    box.querySelectorAll('.mono')[1].textContent = window.CIP_MISSING_NOTE || 'Image loads from Wikipedia when online';
     box.querySelector('i').textContent = p.title;
     box.querySelectorAll('.mono')[0].textContent = p.by + ' · ' + p.year;
     wrap.appendChild(box);

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Composition in Photography</title>
+<meta name="description" content="An interactive presentation on the ten elements of photographic composition, with thirty famous photographs. By Wynn Morgan, Ryan Barbra and Mithun Chigurupati.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Jost:wght@300..600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  // Apply the saved theme before first paint so the page never flashes the wrong one.
+  try { var t = localStorage.getItem('cip-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+</head>
+<body>
+<a class="skip" href="#deck">Skip to presentation</a>
+
+<header class="topbar" id="topbar">
+  <button class="brand" type="button" data-go="0" aria-label="Back to the title frame">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text">Composition in Photography</span>
+  </button>
+  <div class="counter mono" aria-live="polite"><span id="counter-now">00</span><span class="counter-sep">/</span><span id="counter-total">00</span><span class="counter-title" id="counter-title"></span></div>
+  <nav class="tools" aria-label="Presentation tools">
+    <button class="tool" type="button" id="btn-sheet" aria-label="Contact sheet: see every frame (G)" title="Contact sheet (G)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18M3 15h18M9 4v16M15 4v16"/></svg>
+    </button>
+    <button class="tool" type="button" id="btn-theme" aria-label="Switch between darkroom and light table (T)" title="Darkroom / Light table (T)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16z" class="fill"/></svg>
+    </button>
+    <button class="tool" type="button" id="btn-sound" aria-label="Shutter sound off (S)" aria-pressed="false" title="Shutter sound (S)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4l3 6M20 12l-6 3M12 20l-3-6M4 12l6-3"/></svg>
+    </button>
+    <button class="tool" type="button" id="btn-full" aria-label="Full screen (F)" title="Full screen (F)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main class="deck" id="deck" tabindex="-1" aria-roledescription="presentation">
+  <!-- Slides are built from js/content.js -->
+</main>
+
+<div class="shutter" id="shutter" aria-hidden="true"><i></i><i></i></div>
+
+<footer class="filmstrip" id="filmstrip">
+  <button class="nav-btn" type="button" id="btn-prev" aria-label="Previous frame">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+  </button>
+  <div class="strip" id="strip" role="tablist" aria-label="Frames"></div>
+  <button class="nav-btn" type="button" id="btn-next" aria-label="Next frame">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+  </button>
+</footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <h2 id="sheet-title">Contact sheet</h2>
+      <p class="mono">Pick a frame. Keyboard: arrows, space, G, T, F, 1–9 and 0 jump to an element.</p>
+      <button class="tool sheet-close" type="button" data-close-sheet aria-label="Close contact sheet">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <ol class="sheet-grid" id="sheet-grid"></ol>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-labelledby="lb-title">
+  <div class="lb-stage">
+    <div class="lb-media" id="lb-media"></div>
+  </div>
+  <aside class="lb-info">
+    <p class="mono lb-kicker" id="lb-kicker"></p>
+    <h2 id="lb-title"></h2>
+    <p class="lb-by" id="lb-by"></p>
+    <dl class="lb-facts" id="lb-facts"></dl>
+    <div class="lb-text" id="lb-text"></div>
+    <div class="lb-overlays" role="group" aria-label="Composition overlay">
+      <span class="mono">Overlay</span>
+      <div class="seg" id="lb-grid">
+        <button type="button" data-grid="none" aria-pressed="true">None</button>
+        <button type="button" data-grid="thirds" aria-pressed="false">Thirds</button>
+        <button type="button" data-grid="phi" aria-pressed="false">Golden</button>
+        <button type="button" data-grid="diag" aria-pressed="false">Diagonals</button>
+      </div>
+    </div>
+    <div class="lb-nav">
+      <button type="button" class="btn ghost" id="lb-prev">← Previous</button>
+      <button type="button" class="btn ghost" id="lb-next">Next →</button>
+    </div>
+  </aside>
+  <button class="tool lb-close" type="button" id="lb-close" aria-label="Close photograph">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+</div>
+
+<svg class="defs" aria-hidden="true" focusable="false" width="0" height="0">
+  <defs>
+    <!-- Roughens strokes so marks look like a red china marker on a contact sheet -->
+    <filter id="grease" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<script src="photos/manifest.js"></script>
+<script src="js/content.js"></script>
+<script src="js/images.js"></script>
+<script src="js/util.js"></script>
+<script src="js/demos/hero.js"></script>
+<script src="js/demos/compose.js"></script>
+<script src="js/demos/thirds.js"></script>
+<script src="js/demos/viewpoint.js"></script>
+<script src="js/demos/light.js"></script>
+<script src="js/demos/lines.js"></script>
+<script src="js/demos/shape.js"></script>
+<script src="js/demos/form.js"></script>
+<script src="js/demos/space.js"></script>
+<script src="js/demos/texture.js"></script>
+<script src="js/demos/pattern.js"></script>
+<script src="js/demos/simplicity.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/lightbox.js"></script>
+<script src="js/deck.js"></script>
+</body>
+</html>

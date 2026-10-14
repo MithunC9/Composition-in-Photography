@@ -87,10 +87,10 @@
       var n = field.querySelectorAll('.pt-item').length;
       hN.textContent = n + ' repeats';
       var t, s;
-      if (count === 0) { s = 'Pure pattern'; t = '<strong>A perfect pattern.</strong> The rhythm is pleasing, but there is no center of interest and the eye wanders. Click any item to break it.'; }
-      else if (count === 1) { s = 'One break'; t = '<strong>One break, and your eye goes straight to it.</strong> The pattern now has a subject. As the COOPH video puts it, patterns are pleasing, but the best is when the pattern is interrupted.'; }
-      else if (count <= 3) { s = count + ' breaks'; t = '<strong>' + count + ' breaks start to compete</strong> for attention. The eye jumps between them instead of resting on one.'; }
-      else { s = count + ' breaks'; t = '<strong>Too many breaks.</strong> The rhythm falls apart and the pattern turns into clutter.'; }
+      if (count === 0) { s = 'Pure pattern'; t = '<strong>A perfect pattern.</strong> Nice rhythm, but nothing to look at first. Click any item to break it.'; }
+      else if (count === 1) { s = 'One break'; t = '<strong>One break, and your eye goes straight to it.</strong> Now the pattern has a subject.'; }
+      else if (count <= 3) { s = count + ' breaks'; t = '<strong>' + count + ' breaks</strong> start to compete, and your eye jumps between them.'; }
+      else { s = count + ' breaks'; t = '<strong>Too many breaks.</strong> The pattern turns into clutter.'; }
       hS.textContent = s;
       readout.innerHTML = '<span class="mono">Pattern</span>' + t;
     }

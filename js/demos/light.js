@@ -184,14 +184,14 @@
       hSun.textContent = 'Sun ' + st.elev + '° above the horizon';
       hLen.textContent = '1.75 m person → ' + (len >= 10 ? len.toFixed(0) : len.toFixed(1)) + ' m shadow';
       var html;
-      if (st.elev < 12) html = '<strong>Golden hour.</strong> The low sun rakes across the ground and stretches every shadow into a long diagonal, the light Paul Strand used on Wall Street.';
-      else if (st.elev < 35) html = '<strong>Morning or afternoon light.</strong> Shadows are long enough to show shape and depth, and faces get gentle modeling.';
-      else if (st.elev < 60) html = '<strong>High sun.</strong> Shadows shrink under the subjects and contrast starts to flatten.';
-      else html = '<strong>Midday.</strong> Shadows sit straight down and the light is harsh and flat, the least flattering light of the day.';
-      if (st.soft) html += ' <strong>Soft light</strong> from a large source (an overcast sky) blurs shadow edges.';
-      else html += ' <strong>Hard light</strong> from a small source (direct sun) makes crisp shadow edges.';
-      if (Math.abs(st.az) < 15) html += ' With the sun behind the camera, front light flattens the scene.';
-      else if (Math.abs(st.az) > 140) html += ' <strong>Backlight:</strong> the sun faces the camera, shadows run toward us and the columns turn into silhouettes.';
+      if (st.elev < 12) html = '<strong>Golden hour.</strong> Long shadows, like in Paul Strand’s Wall Street.';
+      else if (st.elev < 35) html = '<strong>Morning or afternoon.</strong> Shadows are long enough to show depth.';
+      else if (st.elev < 60) html = '<strong>High sun.</strong> Shadows shrink and the scene flattens out.';
+      else html = '<strong>Midday.</strong> Shadows fall straight down. Harsh, flat light.';
+      if (st.soft) html += ' Soft light, like a cloudy sky, blurs the shadow edges.';
+      else html += ' Hard light, like direct sun, makes crisp shadow edges.';
+      if (Math.abs(st.az) < 15) html += ' With the sun behind you, the front light flattens everything.';
+      else if (Math.abs(st.az) > 140) html += ' With backlight the shadows run toward you and the columns turn into silhouettes.';
       if (readout._last !== html) { readout.innerHTML = '<span class="mono">Light</span>' + html; readout._last = html; }
     }
 

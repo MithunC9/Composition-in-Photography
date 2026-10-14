@@ -8,7 +8,7 @@
   var KINDS = {
     horizontal: {
       label: 'Horizontal',
-      text: '<strong>Horizontal lines</strong> feel calm and tranquil and suggest space. They are common in landscapes: the horizon, the sea, a field.',
+      text: '<strong>Horizontal lines</strong> feel calm, like a horizon or the sea.',
       draw: function () {
         var o = '<rect width="600" height="400" fill="#b9b2a7"/><rect y="250" width="600" height="150" fill="#3d3a36"/>';
         [70, 120, 160, 190].forEach(function (y, i) { o += '<path class="ln" d="M' + (40 + i * 30) + ' ' + y + 'H' + (560 - i * 50) + '" stroke="#e8e2d8" stroke-width="' + (2 - i * .3) + '"/>'; });
@@ -21,7 +21,7 @@
     },
     vertical: {
       label: 'Vertical',
-      text: '<strong>Vertical lines</strong> give an impression of height and grandeur, like tree trunks, columns and skyscrapers. A small figure at the base makes them feel even taller.',
+      text: '<strong>Vertical lines</strong> feel tall and strong. The tiny person makes them look even taller.',
       draw: function () {
         var o = '<rect width="600" height="400" fill="#cbc4b8"/>';
         [[40, 18], [96, 26], [150, 14], [208, 30], [262, 20], [330, 34], [396, 16], [446, 26], [508, 22], [560, 30]].forEach(function (t, i) {
@@ -34,7 +34,7 @@
     },
     diagonal: {
       label: 'Diagonal',
-      text: '<strong>Diagonal lines</strong> convey movement and energy. Strongly angled lines create tension, which is why a staircase or a slanted pole feels alive.',
+      text: '<strong>Diagonal lines</strong> feel like movement and tension.',
       draw: function () {
         var o = '<rect width="600" height="400" fill="#c2bbaf"/><path d="M0 400L600 40V400Z" fill="#2c2a27"/>';
         for (var i = 0; i < 12; i++) {
@@ -49,7 +49,7 @@
     },
     converging: {
       label: 'Converging',
-      text: '<strong>Converging lines</strong> create depth and lead the eye straight to the point where they meet. Put your subject there. Drag the vanishing point to move it.',
+      text: '<strong>Converging lines</strong> pull your eye to the point where they meet. Drag the red dot to move it.',
       draw: function (vp) {
         var o = '<rect width="600" height="' + vp.y + '" fill="#b1aa9e"/><rect y="' + vp.y + '" width="600" height="' + (400 - vp.y) + '" fill="#3e3b37"/>';
         o += '<path d="M' + vp.x + ' ' + vp.y + 'L130 400H470Z" fill="#26241f"/>';
@@ -68,7 +68,7 @@
     },
     curved: {
       label: 'Curved',
-      text: '<strong>Curved lines</strong> create flow and harmony. They feel soft and natural, and an S-curve carries the eye gently through the whole picture, like the river in Ansel Adams’s Tetons.',
+      text: '<strong>Curved lines</strong> flow. An S-curve walks your eye through the picture, like the river in Adams’s Tetons.',
       draw: function () {
         var o = '<rect width="600" height="400" fill="#4a4743"/><path d="M0 0H600V120L520 92 470 118 420 70 380 110 330 40 290 104 240 76 200 112 150 80 100 116 40 90 0 110Z" fill="#cfc8bc"/>';
         o += '<path d="M0 120H600V400H0Z" fill="#2a2825"/>';

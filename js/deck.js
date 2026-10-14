@@ -29,7 +29,7 @@
       '<div class="cover-text">' +
         '<p class="kicker mono rise"><b>Frame 00</b><span class="line"></span>A presentation in ten elements</p>' +
         '<h1 class="cover-title rise">Composition <span class="l2">in Photography</span><span class="l3">Ten elements, thirty photographs</span></h1>' +
-        '<p class="cover-sub rise">Every photograph is a decision about what goes inside the frame and where. Move across the print to frame it yourself, then step through the ten elements that photographers use to arrange a picture.</p>' +
+        '<p class="cover-sub rise">Every photo is a choice about what goes in the frame. Move across the print to try it yourself.</p>' +
         '<div class="cover-meta rise"><p class="mono">Presented by</p><ul>' +
           C.GROUP.map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') +
         '</ul></div>' +
@@ -46,10 +46,10 @@
         '<p class="kicker mono"><b>01</b><span class="line"></span>Definition</p>' +
         '<h2 class="title">What is <em>composition</em>?</h2>' +
         '<div class="etym"><span class="word">com·po·si·tion</span><span class="mono gloss">from Latin componĕre, “to put together”</span></div>' +
-        '<p class="lede">In photography, composition is the placement or arrangement of visual elements inside the frame, as distinct from the subject itself. It is the conscious organization of line, shape, light, space and texture so that they work together as a whole and lead the viewer’s eye.</p>' +
+        '<p class="lede">Composition is how everything inside the frame is arranged, separate from what the subject is. It decides where your eye goes.</p>' +
         '<ul class="points">' +
-          '<li>The same subject can be <strong>composed many ways</strong>, and each arrangement changes what the picture says.</li>' +
-          '<li>The photographer chooses a <strong>center of interest</strong> and arranges everything else to support it. When it all works together, the result is called <strong>unity</strong>.</li>' +
+          '<li>The same subject can be composed many ways, and each one feels different.</li>' +
+          '<li>Pick a <strong>center of interest</strong> and arrange everything else around it.</li>' +
         '</ul>' +
         '<blockquote class="quote">Composition is the strongest way of seeing.<cite>Edward Weston</cite></blockquote>' +
       '</div>' +
@@ -86,7 +86,7 @@
       '<div class="index-head">' +
         '<div><p class="kicker mono"><b>02</b><span class="line"></span>Contents</p>' +
         '<h2 class="title">The ten <em>elements</em></h2></div>' +
-        '<p>These are the tools of composition. For each one: a definition, an experiment you can try, and three famous photographs that use it. Pick one to jump straight there.</p>' +
+        '<p>Each one has a definition, something to try, and three famous photos. Click one to jump to it.</p>' +
       '</div>' +
       '<ol class="index-grid">' + items + '</ol>';
   }
@@ -166,7 +166,7 @@
       '<div>' +
         '<p class="kicker mono"><b>Watch</b><span class="line"></span>Rule of thirds and beyond</p>' +
         '<h2 class="title" style="font-size:clamp(2rem,3.6vw,3.6rem)">Nine tips, <em>one master</em></h2>' +
-        '<p class="lede" style="font-size:var(--fs-body)">COOPH walks through nine composition tips using Steve McCurry’s photographs, starting with the rule of thirds. Each tip maps onto one of our ten elements. Click a tip to jump to it.</p>' +
+        '<p class="lede" style="font-size:var(--fs-body)">Nine composition tips shown with Steve McCurry’s photos, starting with the rule of thirds. Click a tip to jump to the matching element.</p>' +
         '<ol class="tips">' + tips + '</ol>' +
       '</div>';
     var poster = s.inner.querySelector('#video-poster');
@@ -202,15 +202,15 @@
         '<p class="kicker mono"><b>Afterword</b><span class="line"></span>Breaking the rules</p>' +
         '<blockquote class="big-quote" style="margin:0">There are no rules for good photographs, there are only <em>good photographs.</em></blockquote>' +
         '<cite>Attributed to Ansel Adams</cite>' +
-        '<p class="lede">Our reading says it directly: breaking the rules can create tension or unease, yet it can add interest to the picture if used carefully. Every element here is a guideline. The masters learned them first, then broke them on purpose.</p>' +
+        '<p class="lede">From our reading: breaking the rules can create tension, but done carefully it can make a picture more interesting.</p>' +
       '</div>' +
       '<div class="breaks">' +
         breakRow('<rect x="1" y="1" width="94" height="62" fill="none" stroke="currentColor" opacity=".35"/><path d="M1 32h94" stroke="currentColor"/><path d="M1 32h94v31H1z" fill="currentColor" opacity=".12"/>',
-          'A centered horizon', 'Hiroshi Sugimoto’s Seascapes split the frame exactly in half, breaking the rule of thirds to make the sea feel still and timeless.') +
+          'A centered horizon', 'Hiroshi Sugimoto’s seascapes put the horizon dead center, so the sea feels perfectly still.') +
         breakRow('<rect x="1" y="1" width="94" height="62" fill="none" stroke="currentColor" opacity=".35"/><circle cx="12" cy="52" r="5" fill="var(--marker)"/><path d="M30 10l54 4 6 44H46z" fill="currentColor" opacity=".8"/>',
-          'A subject in the corner', 'Arnold Newman pushed Stravinsky into the bottom-left corner and gave the frame to a piano. The imbalance is the portrait.') +
+          'A subject in the corner', 'Newman put Stravinsky in the bottom-left corner and gave the rest of the frame to the piano.') +
         breakRow('<rect x="1" y="1" width="94" height="62" fill="none" stroke="currentColor" opacity=".35"/><circle cx="48" cy="32" r="12" fill="none" stroke="currentColor"/><circle cx="48" cy="32" r="3" fill="var(--marker)"/>',
-          'Dead center', 'Steve McCurry ends his own tips by saying rules are made to be broken. A centered face with a direct gaze can hit harder than any power point.') +
+          'Dead center', 'McCurry ends his own tips by saying rules are made to be broken. A centered face looking straight at you can beat any power point.') +
       '</div>';
     function breakRow(svg, t, d) {
       return '<div class="break"><svg viewBox="0 0 96 64" aria-hidden="true">' + svg + '</svg><div><h3>' + esc(t) + '</h3><p>' + esc(d) + '</p></div></div>';
@@ -235,7 +235,7 @@
         '<div class="sources"><p class="mono" style="color:var(--muted);margin:0 0 4px">Sources</p>' + sources + '</div>' +
       '</div>' +
       '<ol class="credit-list">' + credits + '</ol>' +
-      '<p class="fine">Photographs are shown for non-commercial, educational classroom use. Rights stay with the photographers, their estates and agencies. Public domain works are marked. Images load from Wikimedia Commons and Wikipedia.</p>';
+      '<p class="fine">Photos are shown for classroom use only. Rights belong to the photographers and their estates.</p>';
   }
 
   /* ---------- demo mounting ---------- */

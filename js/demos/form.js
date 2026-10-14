@@ -111,11 +111,11 @@
 
     function describe() {
       var a = Math.abs(st.az);
-      if (st.shape) return ['Shape', '<strong>Shape only.</strong> The same object as a flat silhouette: you can recognize the outline, but there is no volume. That is the difference between shape (2D) and form (3D).'];
-      if (st.el > 62) return ['Form, from above', '<strong>Top light.</strong> The upper surfaces glow and the lower half sinks into shadow. Some form shows, but the lobes lose their modeling.'];
-      if (a < 28) return ['Form hidden', '<strong>Front light</strong>, from the camera’s direction. Few shadows are visible, so the object starts to look like a flat cut-out. Form disappears.'];
-      if (a > 140) return ['Silhouette', '<strong>Backlight.</strong> The side facing us falls into shadow and only a bright edge remains. Form collapses into a silhouette, which is shape.'];
-      return ['Form revealed', '<strong>Side light.</strong> Highlight, midtones and deep shadow sweep across every lobe. The tonal gradation tells your eye the object is round and solid, like Weston’s pepper.'];
+      if (st.shape) return ['Shape', '<strong>Shape only.</strong> Same object, flat silhouette. You see the outline but no volume.'];
+      if (st.el > 62) return ['Form, from above', '<strong>Top light.</strong> The top glows and the bottom falls into shadow.'];
+      if (a < 28) return ['Form hidden', '<strong>Front light.</strong> Almost no shadows, so it starts to look like a flat cut-out.'];
+      if (a > 140) return ['Silhouette', '<strong>Backlight.</strong> The front goes dark and only a bright edge is left. It becomes a silhouette.'];
+      return ['Form revealed', '<strong>Side light.</strong> Bright to dark across every curve, so it looks round and solid, like Weston’s pepper.'];
     }
 
     var gl = null, prog, loc = {};

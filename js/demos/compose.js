@@ -5,13 +5,13 @@
 
   var LAYOUTS = {
     center: { label: 'Centered', horizon: 200, tree: [300, 200, 1], sun: [300, 78, 1], grid: false,
-      text: '<strong>Centered, horizon in the middle.</strong> Stable and formal, but the eye has nowhere to travel. The frame is cut exactly in half.' },
+      text: '<strong>Centered.</strong> Calm and stable, but the frame is cut in half and the eye has nowhere to go.' },
     thirds: { label: 'Thirds', horizon: 267, tree: [400, 267, 1.05], sun: [200, 133, 1], grid: true,
-      text: '<strong>Rule of thirds.</strong> Tree on the right third, sun on the upper-left power point, horizon on the lower third. The eye moves between them.' },
+      text: '<strong>Rule of thirds.</strong> Tree on the right line, sun on a power point, horizon low. Your eye moves between them.' },
     space: { label: 'Big sky', horizon: 340, tree: [120, 340, .55], sun: [470, 96, .8], grid: false,
-      text: '<strong>Low horizon, lots of negative space.</strong> The sky takes over and the small tree feels solitary. The mood changes completely.' },
+      text: '<strong>Big sky.</strong> With so much empty space, the small tree feels alone.' },
     close: { label: 'Fill the frame', horizon: 318, tree: [430, 318, 2.7], sun: [120, 70, .7], grid: false,
-      text: '<strong>Move closer.</strong> The tree fills the frame and runs off the edges. Its shape and texture become the subject, not the landscape.' }
+      text: '<strong>Move closer.</strong> The tree fills the frame, so its shape becomes the subject.' }
   };
 
   U.demo('compose', function (host) {

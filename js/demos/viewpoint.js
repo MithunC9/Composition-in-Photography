@@ -94,10 +94,10 @@
     }
 
     function viewText(hh) {
-      if (hh < .6) return ['Worm’s-eye view', 'From below, the child towers over the camera and looks <strong>powerful and dominant</strong>.'];
-      if (hh < 1.25) return ['Child’s eye level', 'At the child’s own height the camera treats them <strong>as an equal</strong>.'];
-      if (hh < 2.3) return ['Adult eye level', 'Looking down from an adult’s height, the child seems <strong>smaller, diminished in stature</strong>.'];
-      return ['Bird’s-eye view', 'High above, the child becomes <strong>a small shape on the ground</strong> and the setting takes over.'];
+      if (hh < .6) return ['Worm’s-eye view', 'From below, the child looks <strong>powerful</strong>.'];
+      if (hh < 1.25) return ['Child’s eye level', 'At the child’s height, they look like <strong>an equal</strong>.'];
+      if (hh < 2.3) return ['Adult eye level', 'Looking down from adult height, the child looks <strong>small</strong>.'];
+      return ['Bird’s-eye view', 'From high up, the child is <strong>a small shape</strong> and the setting takes over.'];
     }
 
     function draw() {
@@ -235,7 +235,7 @@
       var vt = viewText(st.h);
       hView.textContent = vt[0];
       var html = '<span class="mono">Viewpoint</span>' + vt[1];
-      if (st.door) html += ' The <strong>doorway frames the child</strong> and adds a dark foreground layer, so the picture gains depth.';
+      if (st.door) html += ' The <strong>doorway frames the child</strong> and adds depth.';
       if (readout._last !== html) { readout.innerHTML = html; readout._last = html; }
     }
 

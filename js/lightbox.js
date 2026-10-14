@@ -17,7 +17,7 @@
     document.getElementById('lb-kicker').textContent = 'Element ' + (e.num < 10 ? '0' : '') + e.num + ' · ' + e.name;
     document.getElementById('lb-title').textContent = p.title;
     document.getElementById('lb-by').textContent = p.by + (p.org ? ', ' + p.org : '') + ' · ' + p.year;
-    var facts = [['Date', p.date], ['Place', p.place], ['Camera', p.camera], ['Rights', p.rights === 'pd' ? 'Public domain' : '© Photographer or estate. Shown for classroom use.']];
+    var facts = [['Date', p.date], ['Place', p.place], ['Camera', p.camera]];
     document.getElementById('lb-facts').innerHTML = facts.filter(function (f) { return f[1]; }).map(function (f) {
       return '<dt>' + esc(f[0]) + '</dt><dd>' + esc(f[1]) + '</dd>';
     }).join('');

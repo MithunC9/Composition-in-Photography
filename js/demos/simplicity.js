@@ -97,11 +97,11 @@
       hF.textContent = 'f/' + stop + (b > 0 ? ' · shallow focus' : ' · everything sharp');
       hN.textContent = (visible + 1) + (visible ? ' things in frame' : ' subject');
       var t;
-      if (visible > items.length * .8) t = '<strong>Cluttered.</strong> ' + (visible + 1) + ' things compete for attention. Signs, wires, cars and people all pull the eye. Can you even find the subject?';
-      else if (visible > 0) t = '<strong>Removing distractions.</strong> ' + visible + ' left. With every element gone, the red umbrella gets stronger.';
-      else if (b === 0) t = '<strong>Every distraction is gone.</strong> Keep sliding to open the aperture and soften what is left of the background.';
-      else if (b < .99) t = '<strong>Limiting focus at f/' + stop + '.</strong> A wider aperture makes the depth of field shallow, so the background softens and stops competing.';
-      else t = '<strong>Simplicity.</strong> One subject, one soft background, nothing to distract. The viewer goes straight to what matters.';
+      if (visible > items.length * .8) t = '<strong>Cluttered.</strong> ' + (visible + 1) + ' things fight for attention. Can you find the subject?';
+      else if (visible > 0) t = '<strong>Removing distractions.</strong> ' + visible + ' left, and the red umbrella stands out more.';
+      else if (b === 0) t = '<strong>Distractions gone.</strong> Keep sliding to blur the background.';
+      else if (b < .99) t = '<strong>f/' + stop + '.</strong> A wider aperture blurs the background so it stops competing.';
+      else t = '<strong>Simple.</strong> One subject, a soft background, nothing else.';
       readout.innerHTML = '<span class="mono">Simplicity</span>' + t;
     }
     update();

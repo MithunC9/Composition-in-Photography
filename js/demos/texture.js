@@ -119,9 +119,9 @@
 
     function text() {
       var e = Math.round(st.el);
-      if (e < 15) return ['Texture strongest', '<strong>Raking light at ' + e + '°.</strong> Every ridge and crack throws its own shadow, so the surface leaps out. This is the low sun that lit Aldrin’s bootprint on the Moon.'];
-      if (e < 45) return ['Texture visible', '<strong>Angled light at ' + e + '°.</strong> The texture is still there, but shadows are shorter and the surface looks softer.'];
-      return ['Texture flattened', '<strong>Overhead light at ' + e + '°.</strong> Shadows vanish and the surface goes flat and gray. The texture is still there, but the light can no longer show it.'];
+      if (e < 15) return ['Texture strongest', '<strong>Raking light at ' + e + '°.</strong> Every crack throws a shadow, so the surface jumps out.'];
+      if (e < 45) return ['Texture visible', '<strong>Angled light at ' + e + '°.</strong> Shorter shadows, softer texture.'];
+      return ['Texture flattened', '<strong>Overhead light at ' + e + '°.</strong> No shadows, so the surface looks flat.'];
     }
 
     function render(t) {

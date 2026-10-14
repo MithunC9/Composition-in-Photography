@@ -114,20 +114,20 @@
       }
       ring.setAttribute('opacity', showRing ? 1 : 0);
 
-      if (state.mode === 'none') msgs.push('<span class="mono">Subject</span>Turn on a grid to check your placement.');
-      else if (np.d < 22) msgs.push('<span class="mono">Subject</span><strong>On a power point.</strong> The walker holds attention without sitting dead center.');
-      else if (Math.hypot(sp.x - 300, sp.y - 200) < 40) msgs.push('<span class="mono">Subject</span><strong>Dead center.</strong> Stable but static. Try one of the red power points.');
-      else if (Math.min(Math.abs(sp.x - L.xs[0]), Math.abs(sp.x - L.xs[1])) < 14) msgs.push('<span class="mono">Subject</span><strong>On a vertical line.</strong> Good. Now line it up with a red point.');
-      else msgs.push('<span class="mono">Subject</span>Drag the walker toward a red power point.');
+      if (state.mode === 'none') msgs.push('<span class="mono">Subject</span>Turn on a grid to check.');
+      else if (np.d < 22) msgs.push('<span class="mono">Subject</span><strong>On a power point.</strong> Nice.');
+      else if (Math.hypot(sp.x - 300, sp.y - 200) < 40) msgs.push('<span class="mono">Subject</span><strong>Dead center.</strong> Try a red power point instead.');
+      else if (Math.min(Math.abs(sp.x - L.xs[0]), Math.abs(sp.x - L.xs[1])) < 14) msgs.push('<span class="mono">Subject</span><strong>On a line.</strong> Now move it to a red point.');
+      else msgs.push('<span class="mono">Subject</span>Drag the walker to a red power point.');
 
       var hz = state.horizon;
-      if (Math.abs(hz - 200) < 12) msgs.push('<span class="mono">Horizon</span><strong>Splits the frame in half.</strong> Our reading says exact bisections should be avoided.');
-      else if (Math.abs(hz - L.ys[1]) < 12) msgs.push('<span class="mono">Horizon</span><strong>On the lower line.</strong> The sky dominates: space, weather, mood.');
-      else if (Math.abs(hz - L.ys[0]) < 12) msgs.push('<span class="mono">Horizon</span><strong>On the upper line.</strong> The land and water dominate.');
-      else msgs.push('<span class="mono">Horizon</span>Drag the handle on the right to a grid line.');
+      if (Math.abs(hz - 200) < 12) msgs.push('<span class="mono">Horizon</span><strong>Cuts the frame in half.</strong> Move it to a line.');
+      else if (Math.abs(hz - L.ys[1]) < 12) msgs.push('<span class="mono">Horizon</span><strong>On the lower line.</strong> More sky.');
+      else if (Math.abs(hz - L.ys[0]) < 12) msgs.push('<span class="mono">Horizon</span><strong>On the upper line.</strong> More land and water.');
+      else msgs.push('<span class="mono">Horizon</span>Drag the handle on the right to a line.');
 
       var facingOut = flipped ? sp.x < W * .3 : sp.x > W * .7;
-      if (facingOut) msgs.push('<span class="mono">Space</span>The walker is about to leave the frame. Leave room in front of a moving subject (the rule of space).');
+      if (facingOut) msgs.push('<span class="mono">Space</span>The walker is about to leave the frame. Give it room to walk into.');
       readout.innerHTML = msgs.join('<br>');
       hPos.textContent = 'Horizon ' + Math.round((1 - hz / H) * 100) + '% from bottom';
     }

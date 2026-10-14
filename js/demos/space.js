@@ -82,7 +82,7 @@
         l2.textContent = st.flip ? 'NEGATIVE: THE VASE' : 'NEGATIVE: THE FACES';
         hA.textContent = 'Rubin’s vase, 1915';
         hB.textContent = st.flip ? 'Faces read as figure' : 'Vase reads as figure';
-        readout.innerHTML = '<span class="mono">Space</span><strong>A vase, or two faces?</strong> The same edge belongs to both. Whatever you read as the subject becomes positive space and the rest falls back as negative space. Click to flip.';
+        readout.innerHTML = '<span class="mono">Space</span><strong>A vase, or two faces?</strong> Whatever you see as the subject is positive space. The rest is negative space. Click to flip.';
       } else {
         var hgt = 400 * st.size / 100, s = hgt / 100;
         var x = st.facing === 'in' ? 200 : 420;
@@ -97,9 +97,9 @@
         hA.textContent = 'Positive ' + (100 - neg).toFixed(neg > 99 ? 1 : 0) + '%';
         hB.textContent = 'Negative ' + neg.toFixed(neg > 99 ? 1 : 0) + '%';
         var txt;
-        if (st.size < 18) txt = '<strong>A small subject in a big empty frame</strong> feels alone and vulnerable. The negative space is the message, as in Tank Man or Pale Blue Dot.';
-        else if (st.size < 55) txt = '<strong>Balanced.</strong> The subject is clear, and the space around it gives it room to breathe and shows its scale.';
-        else txt = '<strong>The subject fills the frame.</strong> Negative space nearly disappears, so the picture becomes about the figure’s shape and detail.';
+        if (st.size < 18) txt = '<strong>Small subject, big empty frame.</strong> It feels alone, like Tank Man or Pale Blue Dot.';
+        else if (st.size < 55) txt = '<strong>Balanced.</strong> The subject is clear and has room to breathe.';
+        else txt = '<strong>The subject fills the frame.</strong> Almost no empty space is left.';
         txt += st.facing === 'in' ? ' Facing into the open space, the figure has somewhere to go. That is the rule of space.' : ' Facing out of the frame, the figure seems about to leave, which creates tension.';
         readout.innerHTML = '<span class="mono">Space</span>' + txt;
       }

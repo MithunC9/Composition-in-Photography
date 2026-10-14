@@ -10,10 +10,10 @@
   var COUNTER = 'M352 270 C404 244 494 238 548 258 C596 276 588 306 546 330 C494 358 414 370 352 380 Z';
 
   var MODES = {
-    photo: { label: 'Photograph', text: '<strong>The photograph.</strong> Newman places Stravinsky in the bottom-left corner and gives almost the entire frame to the piano.' },
-    silhouette: { label: 'Silhouette', text: '<strong>Squint at it.</strong> Push the threshold and every tone becomes black or white. What survives is pure shape, and the picture still reads instantly.' },
-    trace: { label: 'Trace shapes', text: '<strong>Find the shapes.</strong> A slanted lid, a sweeping organic curve, a circle for the head, a thin diagonal prop and the hard vertical edge of the wall.' },
-    flat: { label: 'Flat sign', text: '<strong>The musical flat sign.</strong> The raised lid and curved body form a giant ♭, a symbol from Stravinsky’s own language. The shape is the portrait.' }
+    photo: { label: 'Photograph', text: '<strong>The photograph.</strong> Stravinsky in the corner, the piano everywhere else.' },
+    silhouette: { label: 'Silhouette', text: '<strong>Squint at it.</strong> Everything turns black or white, and the picture still reads.' },
+    trace: { label: 'Trace shapes', text: '<strong>The shapes.</strong> A slanted lid, a big curve, a circle for the head, a thin prop and the edge of the wall.' },
+    flat: { label: 'Flat sign', text: '<strong>The flat sign.</strong> The lid and body make a giant ♭, a symbol from Stravinsky’s world of music.' }
   };
 
   function sample(path, n) {
